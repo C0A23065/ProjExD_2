@@ -26,6 +26,18 @@ def check_bound(rct: pg.Rect) -> tuple[bool, bool]:
         tate = False
     return yoko, tate
 
+def gameover(screen: pg.Surface):
+    """
+    ゲームオーバー画面を表示する
+    引数:screen
+    戻り値:なし
+    """
+    background = pg.Surface(screen.get_size())
+    pg.draw.rect(background, (0, 0, 0), (0, 0, WIDTH, HEIGHT))
+    pg.Surface,set.alpha(background, 100)
+    screen.blit(background, (0, 0))
+
+
 
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
@@ -48,6 +60,7 @@ def main():
             if event.type == pg.QUIT: 
                 return
         if kk_rct.colliderect(bb_rct):
+            print("ゲームオーバー")
             return
         screen.blit(bg_img, [0, 0]) 
 
