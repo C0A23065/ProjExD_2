@@ -34,10 +34,10 @@ def gameover(screen: pg.Surface):
     引数:screen
     戻り値:なし
     """
-    background = pg.Surface(screen.get_size())
-    pg.draw.rect(background, (0, 0, 0), (0, 0, WIDTH, HEIGHT))
-    pg.Surface,set.alpha(background, 100)
-    screen.blit(background, (0, 0))
+    background = pg.Surface(screen.get_size()) #Surfaceを生成
+    pg.draw.rect(background, (0, 0, 0), (0, 0, WIDTH, HEIGHT)) #背景のrectを生成
+    pg.Surface.set_alpha(background, 100) #背景の透明率を100に設定
+    screen.blit(background, (0, 0)) #背景を表示
 
 
 
